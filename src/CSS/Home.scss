@@ -1,0 +1,465 @@
+@use "_reset";
+@use "__variable" as v;
+@use "__mixin" as m;
+@import "../CSS/__reusable.scss";
+.container {
+  max-width: v.$w-90;
+  padding: 0;
+  margin: 0 auto;
+  padding: v.$px-1;
+  @include m.breakpoint(md) {
+    padding: v.$px-3;
+  }
+  @include m.breakpoint(xl) {
+    padding: v.$px-6;
+  }
+}
+/*---------------|
+------SECTION----|
+-----------------|*/
+.section {
+  &__heading {
+    padding: 0 0 1.125rem 0;
+    border-bottom: 1px solid black;
+  }
+  &__title {
+    &--typo {
+      font-size: 36px;
+      font-weight: 500;
+    }
+  }
+  &__body {
+    padding: 3.5rem 0 4rem 0;
+  }
+}
+/*---------------|
+------HEADER-----|
+-----------------|*/
+.header {
+  &__inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem 0 0 0;
+    @include m.breakpoint(md) {
+      padding: v.$py-1;
+    }
+    @include m.breakpoint(xl) {
+      padding: 1.5rem 0;
+    }
+  }
+  &__inner > * {
+    flex: 1;
+  }
+  //---------------------------------//
+  .nav__container {
+    display: none;
+    @include m.breakpoint(lg) {
+      display: flex;
+    }
+  }
+  //---------------------------------//
+  &__user {
+    display: none;
+    @include m.breakpoint(lg) {
+      display: flex;
+      justify-content: end;
+    }
+  }
+  &__user-btn > a {
+    margin-left: 1rem;
+    display: flex;
+    & > img {
+      width: 30px;
+      height: 30px;
+      vertical-align: middle;
+    }
+    // &:hover > img {
+    //   filter: invert(1);
+    // }
+    // &:hover {
+    //   background-color: v.$button-color-2;
+    // }
+  }
+  //---------------------------------//
+  .menu {
+    &__toggle {
+      text-align: right;
+      display: inline-block;
+      margin-right: 0.5rem;
+      position: relative;
+      width: 100%;
+      @include m.breakpoint(md) {
+        margin-right: 0;
+      }
+      @include m.breakpoint(lg) {
+        display: none;
+      }
+      & a {
+        text-align: center;
+        display: flex;
+        justify-content: center;
+      }
+    }
+    &__window {
+      display: none;
+      position: absolute;
+      z-index: 2;
+      right: -1.5rem;
+      top: 2rem;
+      width: 100vw;
+      background-color: white;
+      border: 1px solid black;
+      text-align: left;
+      @include m.breakpoint(sm) {
+        right: -1.5rem;
+        top: 2.25rem;
+        width: 50vw;
+      }
+      @include m.breakpoint(md) {
+        right: -3rem;
+        top: 3.25rem;
+      }
+    }
+    &__window.open {
+      display: block;
+    }
+    &__button {
+      background-color: v.$button-color-3;
+      border: none;
+    }
+    &__icon {
+      width: 50%;
+    }
+  }
+}
+/*---------------|
+------BANNER-----|
+-----------------|*/
+.banner {
+  max-width: 90rem;
+  margin: 0 auto 2.5rem auto;
+  position: relative;
+
+  &__image {
+    width: 100%;
+    object-fit: cover;
+    object-position: bottom;
+    opacity: 0.7;
+  }
+  &__cover {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+    background-color: rgba(255, 255, 255, 0.142);
+  }
+  &__title {
+    font-size: v.$font-size-3;
+    line-height: v.$line-height-3;
+    text-transform: uppercase;
+  }
+}
+/*---------------|
+-------NEW-------|
+-----------------|*/
+.product {
+  &__list {
+    @include m.grid(1, 1.875rem);
+    @include m.breakpoint(sm) {
+      @include m.grid(2, 1.875rem);
+    }
+    @include m.breakpoint(xl) {
+      @include m.grid(4, 1.875rem);
+    }
+  }
+  &__item {
+    position: relative;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    max-width: 300px;
+    justify-self: center;
+    &--shadow:hover {
+      box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25),
+        0 10px 10px rgba(0, 0, 0, 0.22);
+    }
+    @include m.breakpoint(md) {
+      width: auto;
+    }
+  }
+  &__thumbnail {
+    position: relative;
+    overflow: hidden;
+  }
+  &__sale {
+    position: absolute;
+    top: 0.5rem;
+    right: 0.5rem;
+    border-radius: 100%;
+    width: 3rem;
+    height: 3rem;
+    text-align: center;
+    line-height: 3rem;
+    &--text {
+      color: white;
+    }
+    &--bg {
+      background: #e97171;
+    }
+  }
+  &__image {
+    transform: scale(1);
+    transition: v.$all-linear-2;
+    object-fit: cover;
+    vertical-align: middle;
+  }
+  &__item:hover .product__image {
+    transform: scale(1.2);
+  }
+  &__info {
+    padding: 1rem;
+    &--bg {
+      background: v.$bg-1;
+    }
+  }
+  &__link {
+    &--text {
+      text-decoration: none;
+      color: v.$text-1;
+    }
+  }
+  &__category {
+    &--text {
+      color: v.$text-3;
+    }
+  }
+  &__price {
+    &--text {
+      color: v.$text-1;
+    }
+    &-old {
+      margin-left: 1rem;
+      text-decoration: line-through;
+      &--text {
+        color: v.$text-2;
+      }
+    }
+  }
+  &__action {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: v.$all-linear-2;
+
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+    &--bg {
+      background: rgba(0, 0, 0, 0.5);
+    }
+    &--text {
+      color: white;
+    }
+    > * {
+      cursor: pointer;
+    }
+  }
+  &__item:hover .product__action {
+    opacity: 1;
+  }
+  &__button {
+    width: 12rem;
+    height: 3rem;
+    color: v.$button-color-1;
+    font-weight: v.$font-weight-6;
+  }
+}
+/*---------------|
+-------SHOP------|
+-----------------|*/
+.shop {
+  &__item {
+    font-size: 0;
+  }
+  @include m.grid(1, 2rem);
+  @include m.breakpoint(sm) {
+    @include m.grid(2, 2rem);
+  }
+  @include m.breakpoint(md) {
+    @include m.grid(2, 3rem);
+  }
+}
+/*---------------|
+-------BLOG------|
+-----------------|*/
+.blog {
+  &__item {
+    margin-bottom: v.$mb-4;
+    @include m.grid(1, 1rem);
+
+    @include m.breakpoint(lg) {
+      @include m.grid(2, 1rem);
+    }
+    @include m.breakpoint(xl) {
+      @include m.grid(2, 3rem);
+    }
+  }
+  &__thumbnail {
+    font-size: 0;
+    justify-self: center;
+  }
+  &__info {
+    padding: v.$p-1;
+    max-width: 600px;
+    justify-self: center;
+    border-bottom: v.$border-black;
+    position: relative;
+    @include m.breakpoint(lg) {
+      margin-right: v.$mr-2;
+      padding-right: 2rem;
+    }
+  }
+  &__title {
+    @include m.breakpoint(lg) {
+      padding: v.$py-05;
+    }
+    @include m.breakpoint(xl) {
+      padding: v.$py-2;
+    }
+    &--typo {
+      font-size: v.$font-size-2;
+      line-height: v.$line-height-2;
+      font-weight: v.$font-weight-6;
+      color: v.$text-1;
+    }
+  }
+  &__description--typo {
+    color: v.$text-3;
+  }
+  &__btn {
+    position: absolute;
+    bottom: 0;
+    right: 1rem;
+    &--typo {
+      font-weight: v.$font-weight-3;
+      text-transform: uppercase;
+    }
+  }
+}
+/*---------------|
+-----SERVICES----|
+-----------------|*/
+.service {
+  &__list {
+    padding: 3rem 1.75rem;
+    @include m.breakpoint(xl) {
+      padding: 6rem 3.5rem;
+    }
+    &--bg {
+      background-color: v.$bg-2;
+    }
+    @include m.grid(1, 30px);
+    @include m.breakpoint(sm) {
+      @include m.grid(2, 30px);
+    }
+    @include m.breakpoint(xl) {
+      @include m.grid(4, 30px);
+    }
+  }
+  &__item {
+    justify-self: center;
+    display: grid;
+    grid-template-columns: 2.75rem auto;
+    gap: 0.25rem;
+    @include m.breakpoint(xl) {
+      display: grid;
+      grid-template-columns: 3.75rem auto;
+      gap: 0.25rem;
+    }
+  }
+  &__image {
+    @include m.breakpoint(sm) {
+      justify-self: center;
+    }
+    align-self: center;
+  }
+  &__name--typo {
+    font-weight: v.$font-weight-6;
+    color: v.$text-4;
+  }
+  &__description--typo {
+    color: v.$text-3;
+  }
+}
+/*---------------|
+------FOOTER-----|
+-----------------|*/
+.footer {
+  &__left {
+    text-align: center;
+    @include m.breakpoint(lg) {
+      text-align: unset;
+    }
+  }
+  &__list {
+    border-bottom: v.$border-1;
+    @include m.breakpoint(lg) {
+      @include m.grid(3, 1.875rem);
+      padding-top: v.$pt-3;
+    }
+  }
+  &__middle {
+    display: flex;
+    justify-content: space-around;
+  }
+  .p0 {
+    padding: 0;
+  }
+  &__title {
+    @include m.breakpoint(lg) {
+      margin-bottom: 3rem;
+    }
+  }
+  &__address {
+    margin: 1rem 0;
+    @include m.breakpoint(lg) {
+      margin: 2rem 0 1rem 0;
+    }
+  }
+  &__right {
+    margin-bottom: 3rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    @include m.breakpoint(lg) {
+      display: block;
+    }
+  }
+  &__bottom {
+    padding: 1rem;
+  }
+  .newsletter {
+    &__input {
+      width: 200px;
+    }
+    &__button {
+      font-weight: v.$font-weight-5;
+      background-color: white;
+      margin-left: 0.5rem;
+      justify-self: left;
+    }
+    &--border {
+      border: 0;
+      border-bottom: v.$border-black;
+    }
+  }
+}

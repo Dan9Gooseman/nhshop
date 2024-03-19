@@ -1,0 +1,22 @@
+@mixin grid($columns,$gap, $size:1fr) {
+    display: grid;
+    grid-template-columns: repeat($columns,$size);
+    grid-gap: $gap;
+}
+@mixin breakpoint($size) {
+    $breakpoints: (
+        sm: 576px,
+        md: 768px,
+        lg: 992px,
+        xl: 1280px,
+    );
+
+    @if map-has-key($breakpoints, $size) {
+        $value: map-get($breakpoints, $size);
+        @media (min-width: $value) {
+            @content;
+        }
+    } @else {
+        @error "No breakpoint found for #{$size}.";
+    }
+}

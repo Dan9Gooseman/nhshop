@@ -1,0 +1,39 @@
+/*---------------|
+------REUSEABLE-----|
+-----------------|*/
+.nav {
+  &__item {
+    min-height: 3rem;
+  }
+  &__list {
+    list-style: none;
+    display: flex;
+    &--column {
+      flex-direction: column;
+    }
+  }
+  &__link {
+    text-decoration: none;
+    display: block;
+    padding: 0.5rem 1.5rem;
+    // &:hover {
+    //   background-color: v.$button-color-2;
+    //   color: v.$button-color-3;
+    //   & > img {
+    //     filter: invert(1);
+    //   }
+    // }
+    &--typo {
+      font-size: v.$font-size-1;
+      line-height: v.$line-height-1;
+    }
+    &--weight {
+      font-weight: v.$font-weight-5;
+    }
+  }
+}
+.text {
+  &--color-5 {
+    color: v.$text-5;
+  }
+}
