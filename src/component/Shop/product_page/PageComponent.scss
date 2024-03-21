@@ -1,0 +1,18 @@
+// @use "../../CSS/common/_mixin" as m;
+@use "../../../CSS/common/_variable" as v;
+// @import "../../CSS/common/_reusable";
+.product__page {
+    width: 16rem;
+    margin:3rem auto 0 auto;
+    display: flex;
+    justify-content: space-between;
+    & .page {
+        display: block;
+        width:3rem;
+        height:2.5rem;
+        background-color: v.$bg-2;
+        text-align: center;
+        line-height: 2.5rem;
+        border-radius: 20%;
+    }
+}

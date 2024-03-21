@@ -1,0 +1,65 @@
+@use "../../CSS/common/_mixin" as m;
+@use "../../CSS/common/_variable" as v;
+@import "../../CSS/common/_reusable";
+
+.filter {
+    margin-bottom: 2.5rem;
+  &__list {
+    padding: 3rem 1.75rem;
+    @include m.breakpoint(sm) {
+      @include m.grid(2, 1.875rem);
+    }
+    @include m.breakpoint(xl) {
+      padding: 3.125rem 3.5rem;
+    }
+    &--bg {
+      background-color: v.$bg-2;
+    }
+  }
+  &__setting {
+    display: flex;
+    align-items: center;
+  }
+  &__options {
+    display: flex;
+    margin-right:1rem;
+    border-right:1px solid black;
+  }
+  &__result{
+    padding-right:1rem;
+  }
+  &__btn {
+    text-align: center;
+    display: flex;
+    margin:0 1rem;
+    &--style {
+        background-color: rgba(0,0,0,0);
+        border:none;
+    }
+    & >p {
+        margin-left:0.5rem;
+        font-size: 16px;
+    }
+  }
+  &__logo {
+    height: 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  &__sort {
+    justify-self: end;
+    & > label {
+        margin: 0 1rem;
+        & > input,select {
+            margin-left:1rem;
+            border:none;
+            height:40px;
+        }
+        & > input {
+            padding-left:1rem;
+        }
+    }
+  }
+}
+

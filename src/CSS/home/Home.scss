@@ -1,7 +1,7 @@
-@use "_reset";
-@use "__variable" as v;
-@use "__mixin" as m;
-@import "../CSS/__reusable.scss";
+@use "../common/_reset";
+@use "../common/__variable" as v;
+@use "../common/__mixin" as m;
+@import "../common/__reusable.scss";
 .container {
   max-width: v.$w-90;
   padding: 0;
