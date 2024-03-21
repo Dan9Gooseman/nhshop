@@ -13,8 +13,8 @@ const Header = () => {
             </a>
             <div className="nav__container">
               <ul className="nav__list">
-                <li className="nav__item"><a href="#" className="nav__link nav__link--hover nav__link--typo">Home</a></li>
-                <li className="nav__item"><a href="#" className="nav__link nav__link--hover nav__link--typo">Shop</a></li>
+                <li className="nav__item"><a href="/home" className="nav__link nav__link--hover nav__link--typo">Home</a></li>
+                <li className="nav__item"><a href="/shop" className="nav__link nav__link--hover nav__link--typo">Shop</a></li>
                 <li className="nav__item"><a href="#" className="nav__link nav__link--hover nav__link--typo">About</a></li>
                 <li className="nav__item"><a href="#" className="nav__link nav__link--hover nav__link--typo">Contact</a></li>
               </ul>
