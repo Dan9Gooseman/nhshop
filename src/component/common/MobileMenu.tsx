@@ -7,10 +7,10 @@ const MobileMenu:React.FC = () => {
     { label: 'Shop', url: '#', isImage: false },
     { label: 'About', url: '#', isImage: false },
     { label: 'Contact', url: '#', isImage: false },
-    { imageSrc: 'src/assets/mdi_account-alert-outline.svg', url: '#', isImage: true, altText: 'User Account' },
-    { imageSrc: 'src/assets/akar-icons_search.svg', url: '#', isImage: true, altText: 'Search' },
-    { imageSrc: 'src/assets/akar-icons_heart.svg', url: '#', isImage: true, altText: 'Favorites' },
-    { imageSrc: 'src/assets/ant-design_shopping-cart-outlined.svg', url: '#', isImage: true, altText: 'Shopping Cart' }
+    { imageSrc: 'assets/mdi_account-alert-outline.svg', url: '#', isImage: true, altText: 'User Account' },
+    { imageSrc: 'assets/akar-icons_search.svg', url: '#', isImage: true, altText: 'Search' },
+    { imageSrc: 'assets/akar-icons_heart.svg', url: '#', isImage: true, altText: 'Favorites' },
+    { imageSrc: 'assets/ant-design_shopping-cart-outlined.svg', url: '#', isImage: true, altText: 'Shopping Cart' }
   ];
     const [isToggle, setToggle] = useState<boolean>(false)
     const toggleMenu = () => {
@@ -19,7 +19,7 @@ const MobileMenu:React.FC = () => {
     return (
       <div className="menu__toggle">
         <button className="menu__button" onClick={toggleMenu}>
-          <img className="menu__icon" src="src/assets/menu.svg" alt="Menu" />
+          <img className="menu__icon" src="assets/menu.svg" alt="Menu" />
         </button>
         <div className={`menu__window ${isToggle ? 'open' : ''}`}>
           <ul className="nav__list nav__list--column">

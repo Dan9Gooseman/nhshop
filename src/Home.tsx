@@ -1,6 +1,5 @@
 import "./CSS/home/Home.scss";
 import Banner from "./Contact";
-import Shop from "./Shop";
 import Blog from "./component/Blog";
 import Product from "./component/Product";
 import Footer from "./component/common/Footer";
@@ -14,7 +13,6 @@ function Home() {
       <Header />
       <Banner />
       <Product />
-      <Shop />
       <Blog />
       <Services />
       <Footer />
