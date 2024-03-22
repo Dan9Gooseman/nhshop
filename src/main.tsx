@@ -7,10 +7,8 @@ ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
     <BrowserRouter>
       <Routes>
-        <Route path="/">
-          <Route index path="home" element={<Home />} />
-          <Route path="Shop" element={<Shop />} />
-        </Route>
+        <Route index element={<Home />} />
+        <Route path="/Shop" element={<Shop />} />
       </Routes>
     </BrowserRouter>
   </React.StrictMode>

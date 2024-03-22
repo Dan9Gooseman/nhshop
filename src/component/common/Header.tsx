@@ -8,12 +8,12 @@ const Header = () => {
     <header className="header">
         <div className="container">
           <div className="header__inner">
-            <a href="#" className="home__link">
+            <a href="/" className="home__link">
               <img className="home__logo" src="./src/assets/logo.svg" alt="#"></img>
             </a>
             <div className="nav__container">
               <ul className="nav__list">
-                <li className="nav__item"><a href="/home" className="nav__link nav__link--hover nav__link--typo">Home</a></li>
+                <li className="nav__item"><a href="/" className="nav__link nav__link--hover nav__link--typo">Home</a></li>
                 <li className="nav__item"><a href="/shop" className="nav__link nav__link--hover nav__link--typo">Shop</a></li>
                 <li className="nav__item"><a href="#" className="nav__link nav__link--hover nav__link--typo">About</a></li>
                 <li className="nav__item"><a href="#" className="nav__link nav__link--hover nav__link--typo">Contact</a></li>
