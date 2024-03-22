@@ -8,7 +8,7 @@ const Footer = () => {
           <div className="footer__list">
             <div className="footer__left">
               <a href="#" className="home__link">
-                <img src="../src/assets/logo.svg"  className="home__logo" />
+                <img src="assets/logo.svg"  className="home__logo" />
               </a>
               <p className="footer__address text--color-5">400 University Drive Suite 200 Coral Gables, FL 33134 USA</p>
             </div>
