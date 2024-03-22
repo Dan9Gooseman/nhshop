@@ -9,14 +9,14 @@ const Filter = () => {
           <div className="filter__setting">
             <div className="filter__options">
               <button className="filter__btn filter__btn--style">
-                <img className="filter__logo" src="../../../src/assets/filtering.svg" alt="filter logo"></img>
+                <img className="filter__logo" src="assets/filtering.svg" alt="filter logo"></img>
                 <p>Filter</p>
               </button>
               <button className="filter__btn filter__btn--style">
-                <img className="filter__logo" src="../../../src/assets/grid-big-round.svg" alt="filter logo"></img>
+                <img className="filter__logo" src="assets/grid-big-round.svg" alt="filter logo"></img>
               </button>
               <button className="filter__btn filter__btn--style">
-                <img className="filter__logo" src="../../../src/assets/view-list.svg" alt="filter logo"></img>
+                <img className="filter__logo" src="assets/view-list.svg" alt="filter logo"></img>
               </button>
             </div>
             <div className="filter__result">
