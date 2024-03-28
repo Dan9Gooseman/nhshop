@@ -1,0 +1,102 @@
+@use "/src/CSS/common/__variable" as v;
+@use "/src/CSS/common/__mixin" as m;
+@import "/src/CSS/common/__reusable.scss";
+.product {
+  &__item {
+    position: relative;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    max-width: 300px;
+    justify-self: center;
+    &--shadow:hover {
+      box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25),
+        0 10px 10px rgba(0, 0, 0, 0.22);
+    }
+    @include m.breakpoint(md) {
+      width: auto;
+    }
+  }
+  &__thumbnail {
+    position: relative;
+    overflow: hidden;
+  }
+  &__sale {
+    position: absolute;
+    top: 0.5rem;
+    right: 0.5rem;
+    border-radius: 100%;
+    width: 3rem;
+    height: 3rem;
+    text-align: center;
+    line-height: 3rem;
+    &--text {
+      color: white;
+    }
+    &--bg {
+      background: #e97171;
+    }
+  }
+  &__image {
+    transform: scale(1);
+    transition: v.$all-linear-2;
+    object-fit: cover;
+    vertical-align: middle;
+  }
+  &__info {
+    padding: 1rem;
+    &--bg {
+      background: v.$bg-1;
+    }
+  }
+  &__link {
+    &--text {
+      text-decoration: none;
+      color: v.$text-1;
+    }
+  }
+  &__category {
+    &--text {
+      color: v.$text-3;
+    }
+  }
+  &__price {
+    &--text {
+      color: v.$text-1;
+    }
+    &-old {
+      margin-left: 1rem;
+      text-decoration: line-through;
+      &--text {
+        color: v.$text-2;
+      }
+    }
+  }
+  &__action {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: v.$all-linear-2;
+
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+    &--bg {
+      background: rgba(0, 0, 0, 0.5);
+    }
+    &--text {
+      color: white;
+    }
+    > * {
+      cursor: pointer;
+    }
+  }
+  &__button {
+    width: 12rem;
+    height: 3rem;
+    color: v.$button-color-1;
+    font-weight: v.$font-weight-6;
+  }
+}
