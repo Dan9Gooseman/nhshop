@@ -7,9 +7,14 @@ const productSchema = new Schema({
   description: { type: String, required: true },
   year: { type: Number, required: true },
   active: { type: Boolean, default: true },
-  user: {
+  auth: {
     type: Schema.Types.ObjectId,
-    ref: "User",
+    ref: "authModel",
+  },
+  category: {
+    type: Schema.Types.ObjectId,
+    ref: "categoryModel",
+    require: true,
   },
 });
 
