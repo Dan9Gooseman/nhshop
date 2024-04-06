@@ -1,7 +1,7 @@
 import express from "express";
 import dotenv from "dotenv";
-import connectMGDB from "./configs/dbconfig.js";
-import routes from "./routes/index.js";
+import connectMGDB from "./src/configs/dbconfig.js";
+import routes from "./src/routes/index.js";
 // import cors from 'cors'
 
 dotenv.config()
