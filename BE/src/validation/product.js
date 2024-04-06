@@ -12,6 +12,12 @@ export const productValidate = Joi.object({
     "string.min": "Mật khẩu phải có ít nhất 6 ký tự",
     "any.required": "Phải nhập mô tả sản phẩm",
   }),
+  auth:Joi.string().required().messages({
+    "any.required": "Phải có id admin",
+  }),
+  category: Joi.string().required().messages({
+    "any.required": "Phải nhập loại sản phẩm",
+  }),
 }).options({
   abortEarly: false,
 });
