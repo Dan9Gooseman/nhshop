@@ -1,0 +1,47 @@
+@use "src/CSS/common/__reset";
+@use "src/CSS/common/__mixin" as m;
+@use "src/CSS/common/__variable" as v;
+@import "src/CSS/common/__reusable.scss";
+
+.service {
+  &__list {
+    padding: 3rem 1.75rem;
+    @include m.breakpoint(xl) {
+      padding: 6rem 3.5rem;
+    }
+    &--bg {
+      background-color: v.$bg-2;
+    }
+    @include m.grid(1, 30px);
+    @include m.breakpoint(sm) {
+      @include m.grid(2, 30px);
+    }
+    @include m.breakpoint(xl) {
+      @include m.grid(4, 30px);
+    }
+  }
+  &__item {
+    justify-self: center;
+    display: grid;
+    grid-template-columns: 2.75rem auto;
+    gap: 0.25rem;
+    @include m.breakpoint(xl) {
+      display: grid;
+      grid-template-columns: 3.75rem auto;
+      gap: 0.25rem;
+    }
+  }
+  &__image {
+    @include m.breakpoint(sm) {
+      justify-self: center;
+    }
+    align-self: center;
+  }
+  &__name--typo {
+    font-weight: v.$font-weight-6;
+    color: v.$text-4;
+  }
+  &__description--typo {
+    color: v.$text-3;
+  }
+}

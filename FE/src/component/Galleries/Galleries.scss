@@ -1,0 +1,14 @@
+@use "src/CSS/common/__mixin" as m;
+
+.shop {
+  &__item {
+    font-size: 0;
+  }
+  @include m.grid(1, 2rem);
+  @include m.breakpoint(sm) {
+    @include m.grid(2, 2rem);
+  }
+  @include m.breakpoint(md) {
+    @include m.grid(2, 3rem);
+  }
+}

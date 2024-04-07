@@ -1,0 +1,66 @@
+@use "src/CSS/common/__reset";
+@use "src/CSS/common/__mixin" as m;
+@use "src/CSS/common/__variable" as v;
+@import "src/CSS/common/__reusable.scss";
+
+.footer {
+  &__left {
+    text-align: center;
+    @include m.breakpoint(lg) {
+      text-align: unset;
+    }
+  }
+  &__list {
+    border-bottom: v.$border-1;
+    @include m.breakpoint(lg) {
+      @include m.grid(3, 1.875rem);
+      padding-top: v.$pt-3;
+    }
+  }
+  &__middle {
+    display: flex;
+    justify-content: space-around;
+  }
+  .p0 {
+    padding: 0;
+  }
+  &__title {
+    @include m.breakpoint(lg) {
+      margin-bottom: 3rem;
+    }
+  }
+  &__address {
+    margin: 1rem 0;
+    @include m.breakpoint(lg) {
+      margin: 2rem 0 1rem 0;
+    }
+  }
+  &__right {
+    margin-bottom: 3rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    @include m.breakpoint(lg) {
+      display: block;
+    }
+  }
+  &__bottom {
+    padding: 1rem;
+  }
+  .newsletter {
+    &__input {
+      width: 200px;
+    }
+    &__button {
+      font-weight: v.$font-weight-5;
+      background-color: white;
+      margin-left: 0.5rem;
+      justify-self: left;
+    }
+    &--border {
+      border: 0;
+      border-bottom: v.$border-black;
+    }
+  }
+}

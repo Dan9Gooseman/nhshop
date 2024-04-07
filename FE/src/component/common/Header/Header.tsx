@@ -1,6 +1,6 @@
 // import React from 'react'
-
-import MobileMenu from "./MobileMenu"
+import "./Header.scss"
+import { MobileMenu } from "../index"
 
 const Header = () => {
   return (

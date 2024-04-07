@@ -1,0 +1,58 @@
+@use "src/CSS/common/__mixin" as m;
+@use "src/CSS/common/__variable" as v;
+@import "src/CSS/common/__reusable.scss";
+
+.blog {
+  &__item {
+    margin-bottom: v.$mb-4;
+    @include m.grid(1, 1rem);
+
+    @include m.breakpoint(lg) {
+      @include m.grid(2, 1rem);
+    }
+    @include m.breakpoint(xl) {
+      @include m.grid(2, 3rem);
+    }
+  }
+  &__thumbnail {
+    font-size: 0;
+    justify-self: center;
+  }
+  &__info {
+    padding: v.$p-1;
+    max-width: 600px;
+    justify-self: center;
+    border-bottom: v.$border-black;
+    position: relative;
+    @include m.breakpoint(lg) {
+      margin-right: v.$mr-2;
+      padding-right: 2rem;
+    }
+  }
+  &__title {
+    @include m.breakpoint(lg) {
+      padding: v.$py-05;
+    }
+    @include m.breakpoint(xl) {
+      padding: v.$py-2;
+    }
+    &--typo {
+      font-size: v.$font-size-2;
+      line-height: v.$line-height-2;
+      font-weight: v.$font-weight-6;
+      color: v.$text-1;
+    }
+  }
+  &__description--typo {
+    color: v.$text-3;
+  }
+  &__btn {
+    position: absolute;
+    bottom: 0;
+    right: 1rem;
+    &--typo {
+      font-weight: v.$font-weight-3;
+      text-transform: uppercase;
+    }
+  }
+}

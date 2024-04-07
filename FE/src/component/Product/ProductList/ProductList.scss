@@ -1,0 +1,11 @@
+@use "src/CSS/common/__reset";
+@use "src/CSS/common/__mixin" as m;
+.product__list {
+  @include m.grid(1, 1.875rem);
+  @include m.breakpoint(sm) {
+    @include m.grid(2, 1.875rem);
+  }
+  @include m.breakpoint(xl) {
+    @include m.grid(4, 1.875rem);
+  }
+}

@@ -1,6 +1,6 @@
 // import React from 'react'
-import "./PageComponent.scss"
-const PageComponent = () => {
+import "./Pagination.scss"
+const Pagination = () => {
   return (
     <>
     <div className="product__page">
@@ -13,4 +13,4 @@ const PageComponent = () => {
   )
 }
 
-export default PageComponent
+export default Pagination

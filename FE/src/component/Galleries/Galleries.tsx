@@ -1,6 +1,6 @@
 // import React from 'react'
-
-const Shop = () => {
+import "./Galleries.scss"
+const Galleries = () => {
   return (
     <>
     <section className="section">
@@ -54,4 +54,4 @@ const Shop = () => {
   )
 }
 
-export default Shop
+export default Galleries

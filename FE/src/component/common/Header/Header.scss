@@ -1,0 +1,103 @@
+@use "src/CSS/common/__reset";
+@use "src/CSS/common/__mixin" as m;
+@use "src/CSS/common/__variable" as v;
+@import "src/CSS/common/__reusable.scss";
+
+.header {
+    &__inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0.5rem 0 0 0;
+      @include m.breakpoint(md) {
+        padding: v.$py-1;
+      }
+      @include m.breakpoint(xl) {
+        padding: 1.5rem 0;
+      }
+    }
+    &__inner > * {
+      flex: 1;
+    }
+    //---------------------------------//
+    .nav__container {
+      display: none;
+      @include m.breakpoint(lg) {
+        display: flex;
+      }
+    }
+    //---------------------------------//
+    &__user {
+      display: none;
+      @include m.breakpoint(lg) {
+        display: flex;
+        justify-content: end;
+      }
+    }
+    &__user-btn > a {
+      margin-left: 1rem;
+      display: flex;
+      & > img {
+        width: 30px;
+        height: 30px;
+        vertical-align: middle;
+      }
+      // &:hover > img {
+      //   filter: invert(1);
+      // }
+      // &:hover {
+      //   background-color: v.$button-color-2;
+      // }
+    }
+    //---------------------------------//
+    .menu {
+      &__toggle {
+        text-align: right;
+        display: inline-block;
+        margin-right: 0.5rem;
+        position: relative;
+        width: 100%;
+        @include m.breakpoint(md) {
+          margin-right: 0;
+        }
+        @include m.breakpoint(lg) {
+          display: none;
+        }
+        & a {
+          text-align: center;
+          display: flex;
+          justify-content: center;
+        }
+      }
+      &__window {
+        display: none;
+        position: absolute;
+        z-index: 2;
+        right: -1.5rem;
+        top: 2rem;
+        width: 100vw;
+        background-color: white;
+        border: 1px solid black;
+        text-align: left;
+        @include m.breakpoint(sm) {
+          right: -1.5rem;
+          top: 2.25rem;
+          width: 50vw;
+        }
+        @include m.breakpoint(md) {
+          right: -3rem;
+          top: 3.25rem;
+        }
+      }
+      &__window.open {
+        display: block;
+      }
+      &__button {
+        background-color: v.$button-color-3;
+        border: none;
+      }
+      &__icon {
+        width: 50%;
+      }
+    }
+  }

@@ -1,4 +1,5 @@
 // import React from 'react'
+import "./Banner.scss"
 type props = {
   title:String
 }
