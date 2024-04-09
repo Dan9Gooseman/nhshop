@@ -1,10 +1,11 @@
 // import React from 'react'
+import Container from "../Container/Container"
 import "./Footer.scss"
 const Footer = () => {
   return (
     <>
       <footer className="footer">
-        <div className="container">
+        <Container>
           <div className="footer__list">
             <div className="footer__left">
               <a href="#" className="home__link">
@@ -38,7 +39,7 @@ const Footer = () => {
           <div className="footer__bottom">
             <p>2023 furino. All rights reverved</p>
           </div>
-        </div>
+        </Container>
       </footer>
     </>
   )

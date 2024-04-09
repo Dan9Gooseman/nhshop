@@ -3,6 +3,7 @@ import instance from "../../../configs";
 import { TProduct } from "../../../types/TProduct";
 import { ProductCard } from "..";
 import "./ProductList.scss"
+import { Container } from "component/common";
 
 const ProductList = () => {
   const [products, setProducts] = useState<TProduct[]>([]);
@@ -16,7 +17,7 @@ const ProductList = () => {
   return (
     <>
       <section className="section">
-        <div className="container">
+        <Container>
           <div className="section__heading">
             <h2 className="section__title section__title--typo">Product</h2>
           </div>
@@ -27,7 +28,7 @@ const ProductList = () => {
               ))}
             </div>
           </div>
-        </div>
+        </Container>
       </section>
     </>
   );

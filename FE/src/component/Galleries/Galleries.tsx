@@ -1,10 +1,11 @@
 // import React from 'react'
+import { Container } from "component/common"
 import "./Galleries.scss"
 const Galleries = () => {
   return (
     <>
     <section className="section">
-        <div className="container">
+        <Container>
           <div className="section__heading">
             <h2 className="section__title section__title--typo">Shop</h2>
           </div>
@@ -48,7 +49,7 @@ const Galleries = () => {
               </div>
             </div>
           </div>
-        </div>
+          </Container>
       </section>
     </>
   )

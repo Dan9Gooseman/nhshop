@@ -2,18 +2,7 @@
 @use "../common/__variable" as v;
 @use "../common/__mixin" as m;
 @import "../common/__reusable.scss";
-.container {
-  max-width: v.$w-90;
-  padding: 0;
-  margin: 0 auto;
-  padding: v.$px-1;
-  @include m.breakpoint(md) {
-    padding: v.$px-3;
-  }
-  @include m.breakpoint(xl) {
-    padding: v.$px-6;
-  }
-}
+
 /*---------------|
 ------SECTION----|
 -----------------|*/

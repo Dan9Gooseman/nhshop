@@ -1,10 +1,11 @@
 // import React from 'react'
+import { Container } from 'component/common'
 import './Blog.scss'
 const Blog = () => {
   return (
     <>
         <section className="section">
-        <div className="container">
+        <Container>
           <div className="section__heading">
             <h2 className="section__title section__title--typo">Blog</h2>
           </div>
@@ -54,7 +55,7 @@ const Blog = () => {
               </div>
             </div>
           </div>
-        </div>
+        </Container>
       </section>
     </>
   )
