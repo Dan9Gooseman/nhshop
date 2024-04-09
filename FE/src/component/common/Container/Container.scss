@@ -1,0 +1,17 @@
+@use "src/CSS/common/__reset";
+@use "src/CSS/common/__mixin" as m;
+@use "src/CSS/common/__variable" as v;
+@import "src/CSS/common/__reusable.scss";
+
+.container-custom {
+  max-width: v.$w-90;
+  padding: 0;
+  margin: 0 auto;
+  padding: v.$px-1;
+  @include m.breakpoint(md) {
+    padding: v.$px-3;
+  }
+  @include m.breakpoint(xl) {
+    padding: v.$px-6;
+  }
+}
